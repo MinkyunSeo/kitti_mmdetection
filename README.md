@@ -12,11 +12,14 @@ Clone the repo:
 python>=3.7
 PyTorch>=1.8
 CUDA >=9.2
+mmengine>=0.7.0
+mmcv >= 2.0.0
+
 
 ```
 Install all dependent libraries:
   ```bash
-  pip install -r requirements.txt
+./install_packages.sh
 
   ```
 ## 3. Run the file
