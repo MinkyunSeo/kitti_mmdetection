@@ -73,44 +73,45 @@ or execute following commands at /kitti_mmdetection/
 After all process done, your directory should look like this
 
 ```
-└── KITTI_MMDETECTION
-    └── data
-        ├── data_object_image_2.zip
-        ├── data_object_label_2.zip
-        ├── image
-        │   ├── image_file_1.png
-        │   ├── image_file_2.png
-        │   └── ...
-        ├── label
-        │   ├── label_file_1.txt
-        │   ├── label_file_2.txt
-        │   └── ...
-        ├── train
-        │   ├── image
-        │   │   ├── image_file_1.png
-        │   │   ├── image_file_2.png
-        │   │   └── ...
-        │   ├── label
-        │   │   ├── label_file_1.txt
-        │   │   ├── label_file_2.txt
-        │   │   └── ...
-        │   └── coco
-        │       └── kitti_coco_format_train.json
-        └── val
-            ├── image
-            │   ├── image_file_3.png
-            │   ├── image_file_8.png
-            │   └── ...
-            ├── label
-            │   ├── label_file_3.txt
-            │   ├── label_file_8.txt
-            │   └── ...
-            └── coco
-                └── kitti_coco_format_val.json
-    └── mmdetection
-    └── install
-    └── preprocessing
-    └── train
+KITTI_MMDETECTION
+├── data
+│   ├── data_object_image_2.zip
+│   ├── data_object_label_2.zip
+│   ├── image
+│   │   ├── image_file_1.png
+│   │   ├── image_file_2.png
+│   │   └── ...
+│   ├── label
+│   │   ├── label_file_1.txt
+│   │   ├── label_file_2.txt
+│   │   └── ...
+│   ├── train
+│   │   ├── image
+│   │   │   ├── image_file_1.png
+│   │   │   ├── image_file_2.png
+│   │   │   └── ...
+│   │   ├── label
+│   │   │   ├── label_file_1.txt
+│   │   │   ├── label_file_2.txt
+│   │   │   └── ...
+│   │   └── coco
+│   │       └── kitti_coco_format_train.json
+│   └── val
+│       ├── image
+│       │   ├── image_file_3.png
+│       │   ├── image_file_8.png
+│       │   └── ...
+│       ├── label
+│       │   ├── label_file_3.txt
+│       │   ├── label_file_8.txt
+│       │   └── ...
+│       └── coco
+│           └── kitti_coco_format_val.json
+├── mmdetection
+├── install
+├── preprocessing
+└── train
+
 ```
 
 ## 4. Training
@@ -127,4 +128,4 @@ After making config file for training train model by following command (Modify y
 
   ## 5. Test  
     
-You can visualize your model's output
+You can visualize your model's output at train/test.ipynb
