@@ -5,7 +5,12 @@
 Welcome to this repository, which focuses on:
 
 - Training a 2D object detector for the KITTI dataset.
-- Utilizing the powerful "MMDetection" framework for 2D object detection.
+- Utilizing the powerful "MMDetection" framework for 2D object detection.  
+
+<div style="max-width: 100%;">
+    <img src="kitti.png" alt="KITTI Dataset" style="max-width: 100%; height: auto;">
+</div>
+
 
 For more detailed information, please refer to the official MMDetection documentation:
 [https://mmdetection.readthedocs.io/en/latest/](https://mmdetection.readthedocs.io/en/latest/)
