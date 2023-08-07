@@ -1,4 +1,4 @@
-# Object Detection with MMDetection for KITTI Dataset
+# Object Detection using MMDetection on KITTI Dataset
 
 ## Introduction
 
@@ -8,13 +8,13 @@ Welcome to this repository, which focuses on:
 - Utilizing the powerful "MMDetection" framework for 2D object detection.  
 
 <div style="max-width: 100%;">
-    <img src="1.png" alt="KITTI Dataset" style="max-width: 100%; height: auto;">
+    <img src="logo/1.png" alt="KITTI Dataset" style="max-width: 100%; height: auto;">
 </div>
 
 <br>
   
 <div style="max-width: 100%;">
-    <img src="2.png" alt="KITTI Dataset" style="max-width: 100%; height: auto;">
+    <img src="logo/2.png" alt="KITTI Dataset" style="max-width: 100%; height: auto;">
 </div>
 
 
@@ -22,7 +22,7 @@ For more detailed information, please refer to the official MMDetection document
 [https://mmdetection.readthedocs.io/en/latest/](https://mmdetection.readthedocs.io/en/latest/)
 
 <div style="max-width: 100%;">
-    <img src="mmdet-logo.png" alt="MMdetection-logo" style="max-width: 100%; height: auto;">
+    <img src="logo/mmdet-logo.png" alt="MMdetection-logo" style="max-width: 100%; height: auto;">
 </div>
 
 
