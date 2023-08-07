@@ -6,6 +6,21 @@ Clone the repo:
   git clone https://github.com/mingkyun/kitti_mmdetection
   ```
 
+Download Kitti Dateset from following link  
+https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d  
+
+Download left color images of object data set (12 GB)  
+Download training labels of object data set (5 MB)  
+
+Then put both both files at ./KITTI_MMDETECTION/data/
+
+```
+└── KITTI_MMDETECTION
+    └── data
+        ├── data_object_image_2.zip
+        └── data_object_label_2.zip
+```
+
 ## 2. Requirements
 
 ```
@@ -14,13 +29,82 @@ PyTorch>=1.8
 CUDA >=9.2
 mmengine>=0.7.0
 mmcv >= 2.0.0
+```
+Install all dependent libraries:  
 
+  ```bash
+  install/install_packages.sh
+  ```
+or
+  ```bash
+  python install/install_mmdetection.py
+  ```
+for users who do not have administrator privileges
+
+
+## 3. Preprocessing
+
+Execute following command for all preprocessing procedure at once 
+
+  ```bash
+  preprocessing/preprocess.sh
+  ```
+
+or execute following commands at /kitti_mmdetection/ 
+
+(1) unzip files
+
+  ```bash
+  python preprocessing/unzip.py   
+  ```
+
+(2) split to train/val sets (default split rate 0.8)
+
+  ```bash
+  python preprocessing/split.py --split 0.9 
+  ```
+
+(3) transfer kitti annotation to COCO format
+
+  ```bash
+  python preprocessing/toCOCO.py
+  ```
+
+After all process done, your directory should look like this
 
 ```
-Install all dependent libraries:
-  ```bash
-./install_packages.sh
-
-  ```
-## 3. Run the file
-
+└── KITTI_MMDETECTION
+    └── data
+        ├── data_object_image_2.zip
+        ├── data_object_label_2.zip
+        ├── image
+        │   ├── image_file_1.png
+        │   ├── image_file_2.png
+        │   └── ...
+        ├── label
+        │   ├── label_file_1.txt
+        │   ├── label_file_2.txt
+        │   └── ...
+        ├── train
+        │   ├── image
+        │   │   ├── image_file_1.png
+        │   │   ├── image_file_2.png
+        │   │   └── ...
+        │   ├── label
+        │   │   ├── label_file_1.txt
+        │   │   ├── label_file_2.txt
+        │   │   └── ...
+        │   └── coco
+        │       └── kitti_coco_format_train.json
+        └── val
+            ├── image
+            │   ├── image_file_3.png
+            │   ├── image_file_8.png
+            │   └── ...
+            ├── label
+            │   ├── label_file_3.txt
+            │   ├── label_file_8.txt
+            │   └── ...
+            └── coco
+                └── kitti_coco_format_val.json
+```
