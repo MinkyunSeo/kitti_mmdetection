@@ -16,7 +16,7 @@ For more detailed information, please refer to the official MMDetection document
 [https://mmdetection.readthedocs.io/en/latest/](https://mmdetection.readthedocs.io/en/latest/)
 
 <div style="max-width: 80%;">
-    <img src="mmdet-logo.png" alt="MMdetection-logo" style="max-width: 100%; height: auto;">
+    <img src="mmdet-logo.png" alt="MMdetection-logo" style="max-width: 80%; height: auto;">
 </div>
 
 
