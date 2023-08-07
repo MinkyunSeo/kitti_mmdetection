@@ -117,9 +117,9 @@ KITTI_MMDETECTION
 ## 4. Training
 
 (Recommended)
-Follow procedure written at train/build_config.ipynb
+Follow procedure at train/build_config.ipynb
 
-After making config file for training train model by following command (Modify your path)
+After making config file, train model by following command (Modify your path)
 
   ```bash
   python mmdetection/tools/train.py mmdetection/configs/efficientnet/retinanet_effb3_fpn_8xb4-crop896-1x_kitti.py
