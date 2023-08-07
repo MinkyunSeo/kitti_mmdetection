@@ -107,4 +107,24 @@ After all process done, your directory should look like this
             │   └── ...
             └── coco
                 └── kitti_coco_format_val.json
+    └── mmdetection
+    └── install
+    └── preprocessing
+    └── train
 ```
+
+## 4. Training
+
+(Recommended)
+Follow procedure written at train/build_config.ipynb
+
+After making config file for training train model by following command (Modify your path)
+
+  ```bash
+  python mmdetection/tools/train.py mmdetection/configs/efficientnet/retinanet_effb3_fpn_8xb4-crop896-1x_kitti.py
+
+  ```
+
+  ## 5. Test  
+    
+You can visualize your model's output
