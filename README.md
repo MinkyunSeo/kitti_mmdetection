@@ -10,7 +10,7 @@ Clone the repo:
 Download Kitti Dateset from following link  
 https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d  
 
-**Download left color images of object data set (12 GB)**
+**Download left color images of object data set (12 GB)**   
 **Download training labels of object data set (5 MB)** 
 
 Then put both both files at ./KITTI_MMDETECTION/data/
