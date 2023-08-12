@@ -155,9 +155,24 @@ After making config file, train model by following command (Modify your path)
 
   ```
 
+(example)
+  ```bash
+  python mmdetection/tools/train.py {config file path} [--options]
+
+  ```
+
   ## 5. Test  
     
-You can visualize your model's output at train/test.ipynb
+  
+
+After making config file, train model by following command (Modify your path)
+
+  ```bash
+  python mmdetection/tools/test.py {config file path}{checkpoint file path} [--options]
+
+  ```
+
+You can also visualize your model's output at train/test.ipynb
 
 
 ## Citation
