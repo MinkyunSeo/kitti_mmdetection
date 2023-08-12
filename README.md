@@ -151,15 +151,16 @@ Follow procedure at train/build_config.ipynb
 After making config file, train model by following command (Modify your path)
 
   ```bash
+  python mmdetection/tools/train.py {config file path} [--options]
+  ```
+  
+Example
+
+  ```bash
   python mmdetection/tools/train.py mmdetection/configs/efficientnet/retinanet_effb3_fpn_8xb4-crop896-1x_kitti.py
 
   ```
 
-(example)
-  ```bash
-  python mmdetection/tools/train.py {config file path} [--options]
-
-  ```
 
   ## 5. Test  
     
@@ -169,7 +170,6 @@ After making config file, train model by following command (Modify your path)
 
   ```bash
   python mmdetection/tools/test.py {config file path}{checkpoint file path} [--options]
-
   ```
 
 You can also visualize your model's output at train/test.ipynb
