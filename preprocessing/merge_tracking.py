@@ -2,8 +2,8 @@ import os
 import shutil
 
 # Set the source and target directory paths
-source_directory = "/Users/minkyun/Downloads/data_tracking_image_2/training/image_02"
-target_directory = "/Users/minkyun/Downloads/data_tracking_image_2/training/images"
+source_directory = "data/data_tracking_image_2/training/image_02"
+target_directory = "data/data_tracking_image_2/training/images"
 
 # Create the target directory if it doesn't exist
 os.makedirs(target_directory, exist_ok=True)
