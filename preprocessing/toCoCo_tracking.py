@@ -19,13 +19,9 @@ def convert_kitti_to_coco(kitti_labels_dir, output_dir, image_dirs, data_type):
         "annotations": []
     }
 
-    next_image_id = 0  # Initialize the next image ID
-
     # Read and process each KITTI label file for the given image files
     for image_dir in image_dirs:
-        # # dir_num = int(image_dir.split('.')[0])
-        # dir_num = image_dir.split('.')[0]
-        
+
         if ( image_dir == ".DS_Store" ):continue
 
         with open(os.path.join(kitti_labels_dir, image_dir + ".txt"), "r") as file:
@@ -39,18 +35,17 @@ def convert_kitti_to_coco(kitti_labels_dir, output_dir, image_dirs, data_type):
                 frame = "{:06d}".format(frame)  # Pad with leading zeros, e.g. "000001
 
                 if frame not in frame_annotation:
-                    file_name = image_dir + "_" + frame + ".png"
+                    image_id = image_dir + "_" + frame
+                    file_name = image_id + ".png"
                     image_data = {
-                        "id": next_image_id,  # Use the next available image ID
+                        "id": image_id,  # Use the next available image ID
                         "width": 1280,  # 1382 / 1280
                         "height": 384,  # 512 / 384
-                        "dir_num": image_dir,
                         "file_name": file_name, 
                     }
 
                     coco_data["images"].append(image_data)
                     frame_annotation[frame] = True  # Mark this frame as processed
-                    next_image_id += 1  # Increment the next image ID
 
                 track_id = int(elements[1])
                 class_name = elements[2]
@@ -71,8 +66,7 @@ def convert_kitti_to_coco(kitti_labels_dir, output_dir, image_dirs, data_type):
                 if category_id is not None:
                     annotation = {
                         "id": len(coco_data["annotations"]) + 1,
-                        "dir_id": image_dir,
-                        "image_id": frame,
+                        "image_id": image_id,
                         "category_id": category_id,
                         "bbox": [bbox[0], bbox[1], bbox[2] - bbox[0], bbox[3] - bbox[1]],
                         "area": (bbox[2] - bbox[0]) * (bbox[3] - bbox[1]),
@@ -83,12 +77,9 @@ def convert_kitti_to_coco(kitti_labels_dir, output_dir, image_dirs, data_type):
                         "dimensions": dimensions,
                         "location": location,
                         "rotation_y": rotation_y,
-                        "track_id": track_id,
                     }
 
                     coco_data["annotations"].append(annotation)
-
-
 
     # Save the coco_data to a JSON file in the specified output directory
     file_name = f"kitti_coco_format_{data_type}.json"
@@ -98,11 +89,9 @@ def convert_kitti_to_coco(kitti_labels_dir, output_dir, image_dirs, data_type):
 
 if __name__ == "__main__":
     dir = "data/"
-    # test_image_path = dir + "test/image/"
-    # test_label_path = dir + "test/label/"
+    test_image_path = dir + "test/image_02/"
+    test_label_path = dir + "test/label_02/"
     test_coco_path = dir + "test/coco/"
-    test_image_path = "/Users/minkyun/Downloads/data_tracking_image_2/training/image_02"
-    test_label_path = "/Users/minkyun/Downloads/training 4/label_02"
 
     # Create directories for train and val if they don't exist
     os.makedirs(test_coco_path, exist_ok=True)
