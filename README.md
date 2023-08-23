@@ -143,7 +143,7 @@ KITTI_MMDETECTION
 
 ```
 
-## 4. Training
+## 4. Train
 
 (Recommended)
 Follow procedure at train/build_config.ipynb
@@ -174,6 +174,7 @@ After making config file, train model by following command (Modify your path)
 
 You can also visualize your model's output at train/test.ipynb
 
+For those who want to use tracking dataset as test set, you can follow guidelines in the build_config file
 
 ## Citation
 
